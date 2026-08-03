@@ -1,0 +1,354 @@
+/* Reader-specific styles so we don't mess up your home page */
+.reader-body {
+    background-color: #0d0d0f;
+    color: aliceblue;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.reader-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 30px;
+    position: relative;
+}
+
+.content-area {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+.breadcrumbs span {
+    color: #aaa;
+}
+
+/* Chapter Header */
+.chapter-header {
+    position: relative;
+    background-color: #1a1a1d;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 250px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* The text that sits in the top-left corner */
+.arc-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #CA2328;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 6px 12px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* The main text block pushed to the bottom */
+.header-text-content {
+    position: relative;
+    z-index: 2;
+    color: aliceblue;
+    text-shadow: 0px 2px 8px rgba(0,0,0,0.9);
+    max-width: 80%;
+}
+
+.header-text-content h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 42px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-text-content .sub {
+    font-size: 18px;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.header-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #aaa;
+}
+.header-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Reader Controls */
+.reader-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121012;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #1E1A1D;
+    margin-bottom: 20px;
+}
+
+.control-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.control-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'Lato', sans-serif;
+    transition: 0.2s;
+}
+.control-btn:hover {
+    border-color: #CA2328;
+    color: white;
+}
+.control-btn.primary {
+    border-color: #CA2328;
+    color: #CA2328;
+}
+.control-btn.primary:hover {
+    background-color: #CA2328;
+    color: white;
+}
+
+.control-select {
+    background-color: #1a1a1d;
+    color: #ccc;
+    border: 1px solid #333;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+}
+
+/* Manga Pages */
+.manga-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: #0d0d0f;
+    padding: 10px 0;
+}
+
+.manga-page-img {
+    max-width: 100%;       /* Allow it to shrink to fit the screen width */
+    height: auto;          /* Keep the aspect ratio of the original image */
+    width: auto;           /* Allow the width to be determined by the image's natural size */
+    max-height: 90vh;      /* Optional: Prevent it from being taller than the viewport */
+    background-color: #1a1a1d;
+    border-radius: 4px;
+    object-fit: contain;   /* Ensures the image isn't cropped if size is constrained */
+}
+
+/* Page Nav (Bottom) */
+.page-nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 10px 0;
+    border-top: 1px solid #1E1A1D;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.page-nav-btn {
+    color: #CA2328;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+.page-nav-btn:hover {
+    color: aliceblue;
+}
+.page-nav-btn.disabled {
+    color: #444;
+    pointer-events: none;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-card {
+    background-color: #121012;
+    border: 1px solid #1E1A1D;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.sidebar-card h3 {
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid #222;
+    padding-bottom: 10px;
+}
+
+.chapters-dropdown {
+    width: 100%;
+    background-color: #0d0d0f;
+    color: #ccc;
+    border: 1px solid #333;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 15px;
+}
+
+.sidebar-chapter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.sidebar-chapter-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    border-bottom: 1px solid #1a1a1d;
+    font-size: 14px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.sidebar-chapter-list li:hover {
+    background-color: #1a1a1d;
+}
+.sidebar-chapter-list li.active {
+    background-color: #2a1212;
+    border-left: 3px solid #CA2328;
+    color: #CA2328;
+}
+.sidebar-chapter-list .chap-num {
+    color: #888;
+}
+.sidebar-chapter-list li.active .chap-num {
+    color: #CA2328;
+}
+.sidebar-chapter-list .chap-date {
+    color: #666;
+    font-size: 12px;
+}
+
+.view-all-link {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+.view-all-link:hover {
+    border-color: aliceblue;
+    color: aliceblue;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+}
+.info-grid .row {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+}
+.info-grid .row span:last-child {
+    color: #ccc;
+    text-align: right;
+}
+.info-summary {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.5;
+}
+
+.share-icons {
+    display: flex;
+    gap: 12px;
+}
+.share-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #1a1a1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.2s;
+    font-size: 14px;
+}
+.share-icon:hover {
+    background-color: #CA2328;
+    color: white;
+}
+
+.x-logo {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 1000px) {
+    .reader-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        order: -1;
+    }
+    .header-text-content {
+        max-width: 100%;
+    }
+    .header-text-content h1 {
+        font-size: 28px;
+    }
+    .reader-controls {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+}

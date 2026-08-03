@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #070709;
+    color: aliceblue;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #070709;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.nav-logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-item {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #CA2328;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+    border-left: 1px solid #333;
+    padding-left: 20px;
+}
+
+.btn-login {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-signup {
+    background-color: #CA2328;
+    color: white;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #a01b1f;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: aliceblue;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 850px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: #070709;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        border-bottom: 2px solid #2C2727;
+        display: none;
+        z-index: 999;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .auth-buttons {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 600px;
+    overflow: hidden;
+    border-top: 2px solid #2C2727;
+    border-bottom: 2px solid #2C2727;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.banner-overlay-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.maincard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-quote {
+    font-size: 24px;
+    color: #ffffff;
+    border-bottom: 2px solid #4A02AE;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    max-width: 450px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-read {
+    background-color: #CA2328;
+    color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-read:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.btn-view {
+    background-color: #0000004b;
+    color: aliceblue;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid #CA2328;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-view:hover {
+    border-color: aliceblue;
+}
+
+.arccard {
+    background-color: #0000008a;
+    border: 1px solid #CA2328;
+    border-radius: 3px;
+    padding: 20px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.arccard sub {
+    color: rgb(155, 160, 165);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#arctitle {
+    font-size: 20px;
+    color: aliceblue;
+    margin: 0;
+}
+
+#arcdesc {
+    font-size: 14px;
+    color: aliceblue;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.latest-section {
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: aliceblue;
+}
+
+.chapter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chapter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #121012;
+    padding: 20px;
+    border: 1px solid #1E1A1D;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.chapter-row:hover {
+    border-color: #333;
+}
+
+.chapter-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.chapter-title {
+    font-size: 18px;
+    color: aliceblue;
+    margin-bottom: 4px;
+}
+
+.chapter-desc {
+    font-size: 14px;
+    color: #888;
+}
+
+.chapter-date {
+    color: #aaa;
+    font-size: 14px;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+
+.chapter-btn {
+    border: 1px solid #CA2328;
+    background: transparent;
+    color: #CA2328;
+    padding: 6px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.chapter-btn:hover {
+    background-color: #CA2328;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+/* --- FANART SECTION --- */
+.fanart-card {
+    background-color: #121012;
+    border: 1px solid #1E1A1D;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fanart-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #1a1a1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fanart-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border-radius: 6px;
+}
+
+.fanart-image-container img.active {
+    opacity: 1;
+}
+
+.fanart-credit {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.btn-fanart-refresh {
+    background-color: #CA2328;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-fanart-refresh:hover {
+    background-color: #a01b1f;
+}
+
+#latest, #fanart, #home {
+    scroll-margin-top: 80px;
+}
+
+@media (max-width: 850px) {
+    .banner-overlay-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 20px;
+        height: auto;
+        min-height: 100%;
+    }
+    .banner-container {
+        height: auto;
+        min-height: 600px;
+        max-height: none;
+    }
+    .maincard {
+        align-items: center;
+        text-align: center;
+    }
+    .hero-quote {
+        max-width: 100%;
+        text-align: center;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .btn-read, .btn-view {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    .arccard {
+        max-width: 100%;
+        width: 100%;
+    }
+    .chapter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .chapter-date {
+        margin-right: 0;
+    }
+    .chapter-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

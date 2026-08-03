@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenjutsu No Kadai Official Website</title>
+    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dela+Gothic+One&family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img class="nav-logo" src="src/knklogodark0001.png" alt="Logo">
+        <div class="nav-links" id="navLinks">
+            <a id="nav-home" class="nav-item" onclick="highlight('nav-home')" href="#home">HOME</a>
+            <a id="nav-chapters" class="nav-item" onclick="highlight('nav-chapters')" href="#latest">CHAPTERS</a>
+            <a id="nav-fanart" class="nav-item" onclick="highlight('nav-fanart')" href="#fanart">FANART</a>
+            <div class="auth-buttons">
+                <a href="mailto:kay.the.animation.maker@gmail.com?subject=KNK%20Fan%20Mail" class="btn-login">FANMAIL</a>
+                <a href="https://discord.gg/zzujgs2D82" class="btn-signup">DISCORD</a>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div id="home" class="banner-container">
+        <img class="banner-img" src="src/knkbanner.png" alt="Banner">
+        
+        <div class="banner-overlay-content">
+            <div class="maincard">
+                <img class="hero-logo" src="src/knklogodark0002.png" alt="Hero Logo">
+                <p class="hero-quote"><i>"Your sword is merely an extension of your mind."</i></p>
+                <div class="hero-buttons">
+                    <a class="btn-read">READ LATEST CHAPTER ➮</a>
+                    <!-- Updated onclick to call viewAllChapters() -->
+                    <a href="#chapter-list-container" class="btn-view" onclick="viewAllChapters();">VIEW ALL CHAPTERS</a>
+                </div>
+            </div>
+
+            <div class="arccard">
+                <sub>CURRENT ARC</sub>
+                <h3 id="arctitle">Arc 1: Zettai Sentaku</h3>
+                <p id="arcdesc">Fyukuo Mayumi and her peers complete the second part of Zettai Sentaku: achieving their swords.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="latest" class="latest-section">
+        <h3 class="section-title">LATEST CHAPTERS</h3>
+        <div id="chapter-list-container" class="chapter-list"></div>
+        <div id="load-more-wrapper" style="display: flex; justify-content: center; margin-top: 20px;">
+            <button id="load-more-btn" class="btn-view">LOAD MORE</button>
+        </div>
+    </section>
+
+    <section id="fanart" class="fanart-section" style="max-width: 1000px; margin: 40px auto 0 auto; padding: 0 20px; padding-bottom: 40px;">
+        <h3 class="section-title">TOP 3 FANARTS</h3>
+        
+        <div class="fanart-card">
+            <div class="fanart-image-container" id="fanartContainer">
+                <div style="color:#666;">Loading fanart...</div>
+            </div>
+            <p class="fanart-credit" id="fanartCredit">Art by: Unknown</p>
+            <button class="btn-fanart-refresh" onclick="refreshFanart()">🗘 Next Artwork</button>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>

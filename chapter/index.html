@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Reader - Kenjutsu No Kadai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../src/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dela+Gothic+One&family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="reader.css">
+</head>
+<body class="reader-body">
+
+    <nav class="navbar">
+        <img class="nav-logo" src="../src/knklogodark0001.png" alt="Logo">
+        <div class="nav-links" id="navLinks">
+            <a id="home" class="nav-item" href="../index.html">HOME</a>
+            <a id="chapters" class="nav-item active" href="../index.html#chapter-list-container">CHAPTERS</a>
+            <a id="news" class="nav-item" href="../index.html#news">NEWS</a>
+            <a id="extras" class="nav-item" href="../index.html#extras">EXTRAS</a>
+            <div class="auth-buttons">
+                <a href="mailto:kay.the.animation.maker@gmail.com?subject=KNK%20Fan%20Mail" class="btn-login">FANMAIL</a>
+                <a href="https://discord.gg/zzujgs2D82" class="btn-signup">DISCORD</a>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="reader-container">
+        <div class="content-area">
+            <div id="breadcrumbs" class="breadcrumbs">Loading...</div>
+            
+            <div id="chapter-header" class="chapter-header"></div>
+
+            <!-- REMOVED THE LIST STYLE BUTTON -->
+            <div class="reader-controls">
+                <div class="control-group">
+                    <button class="control-btn disabled">&lt; PREV</button>
+                    <select class="control-select">
+                        <option selected>Current Chapter</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <select class="control-select">
+                        <option>Page 1</option>
+                    </select>
+                    <button class="control-btn primary">NEXT &gt;</button>
+                </div>
+            </div>
+
+            <div class="manga-pages" id="manga-pages">
+                <!-- Filled in by JS -->
+            </div>
+
+            <div class="page-nav-bottom">
+                <a href="#" class="page-nav-btn disabled">&lt; PREV</a>
+                <span id="page-count">Page 1 of 1</span>
+                <a href="#" class="page-nav-btn">NEXT &gt;</a>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-card">
+                <h3>CHAPTERS</h3>
+                <select class="chapters-dropdown">
+                    <option>Arc 1: Zettai Sentaku</option>
+                </select>
+                <ul class="sidebar-chapter-list" id="sidebar-list">
+                    <!-- Filled in by JS -->
+                </ul>
+                <a href="../index.html#chapter-list-container" class="view-all-link">🕮 VIEW ALL CHAPTERS</a>
+            </div>
+
+            <div class="sidebar-card" id="info-card">
+                <h3>CHAPTER INFO</h3>
+                <div class="info-grid" id="info-grid">
+                    <!-- Filled in by JS -->
+                </div>
+                <div class="info-summary" id="info-summary">
+                    <!-- Filled in by JS -->
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>SHARE THIS CHAPTER</h3>
+                <div class="share-icons">
+                    <a href="#" class="share-icon"><svg class="x-logo" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg></a>
+                    <a href="#" class="share-icon"><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625H4.897V8.05h1.853V6.275c0-1.833 1.093-2.85 2.766-2.85.802 0 1.64.144 1.64.144v1.804h-.924c-.908 0-1.192.566-1.192 1.146V8.05h2.031l-.324 2.326H9.04v5.625C12.874 15.396 16 12.066 16 8.049z"/></svg></a>
+                    <a href="#" class="share-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-reddit" viewBox="0 0 16 16"><path d="M6.167 8a.83.83 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661m1.843 3.647c.315 0 1.403-.038 1.976-.611a.23.23 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83s.83-.381.83-.83a.831.831 0 0 0-1.66 0z"/><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.2.2 0 0 0-.153.028.2.2 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224q-.03.17-.029.353c0 1.795 2.091 3.256 4.669 3.256s4.668-1.451 4.668-3.256c0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165"/></svg></a>
+                    <a href="#" class="share-icon">🔗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="reader.js"></script>
+</body>
+</html>
