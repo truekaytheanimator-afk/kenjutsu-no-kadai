@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prologue - Kenjutsu No Kadai</title>
+    <link rel="icon" type="image/x-icon" href="../src/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dela+Gothic+One&family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-color: #070709;
+            color: aliceblue;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+        }
+
+        .prologue-page {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .prologue-page h1 {
+            font-family: 'Archivo Black', sans-serif;
+            color: #CA2328;
+            font-size: 38px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .sub-header {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #1E1A1D;
+            padding-bottom: 15px;
+        }
+
+        #log-container {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .log-entry {
+            background-color: #121012;
+            border: 1px solid #1E1A1D;
+            border-left: 4px solid #CA2328;
+            border-radius: 4px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            transition: opacity 0.2s ease;
+            display: none;
+        }
+
+        .log-entry.active {
+            display: block;
+        }
+
+        .log-header {
+            font-family: 'Archivo Black', sans-serif;
+            color: #CA2328;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .log-body {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .final-note {
+            background-color: #0a0a0c;
+            border: 1px solid #2C2727;
+            border-radius: 4px;
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            color: #777;
+            font-style: italic;
+            display: none;
+        }
+
+        .final-note.active {
+            display: block;
+        }
+
+        .final-note strong {
+            color: #aaa;
+        }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid #1E1A1D;
+        }
+
+        .nav-arrow {
+            background: transparent;
+            border: 1px solid #333;
+            color: #ccc;
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .nav-arrow:hover {
+            border-color: #CA2328;
+            color: #CA2328;
+        }
+
+        .nav-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            border-color: #333;
+            color: #555;
+        }
+
+        .counter {
+            color: #888;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            .prologue-page h1 { font-size: 28px; }
+            .log-entry { padding: 20px; }
+            .nav-controls { flex-wrap: wrap; gap: 10px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <img class="nav-logo" src="../src/knklogodark0001.png" alt="Logo">
+        <div class="nav-links" id="navLinks">
+            <a id="nav-home" class="nav-item" href="../index.html#home">HOME</a>
+            <a id="nav-chapters" class="nav-item" href="../index.html#latest">CHAPTERS</a>
+            <a id="nav-prologue" class="nav-item active" href="/prologue/">PROLOGUE</a>
+            <a id="nav-fanart" class="nav-item" href="../index.html#fanart">FANART</a>
+            <div class="auth-buttons">
+                <a href="mailto:kay.the.animation.maker@gmail.com?subject=KNK%20Fan%20Mail" class="btn-login">FANMAIL</a>
+                <a href="https://discord.gg/zzujgs2D82" class="btn-signup">DISCORD</a>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="prologue-page">
+        <h1>PROLOGUE</h1>
+        <div class="sub-header">Classified Personal Logs — Recovered by Fumi Akane (2009)</div>
+
+        <div id="log-container">
+            <!-- Logs will be loaded here by JavaScript -->
+        </div>
+
+        <div class="nav-controls">
+            <button class="nav-arrow" id="prevBtn">← PREV</button>
+            <span class="counter" id="logCounter">Loading...</span>
+            <button class="nav-arrow" id="nextBtn">NEXT →</button>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center;">
+            <a href="../chapter/#1" class="btn-read" style="text-decoration: none; display: inline-block;">START READING ➮</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        let currentIndex = 0;
+        let slides = [];
+        const slideMap = {};
+
+        const container = document.getElementById('log-container');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counter = document.getElementById('logCounter');
+
+        async function loadLogs() {
+            try {
+                const response = await fetch('logs.txt');
+                const text = await response.text();
+
+                // Split the text by === to get individual logs
+                const rawLogs = text.split('===').map(entry => entry.trim()).filter(entry => entry.length > 0);
+
+                container.innerHTML = '';
+                slides = [];
+                
+                // Clear the map and rebuild it
+                for (const key in slideMap) delete slideMap[key];
+
+                rawLogs.forEach((raw, index) => {
+                    const lines = raw.split('\n');
+                    const header = lines[0].trim();
+                    const body = lines.slice(1).join('\n').trim();
+
+                    const isFinalNote = header === 'FINAL NOTE';
+                    const id = isFinalNote ? 'log-note' : `log-${index + 1}`;
+
+                    const div = document.createElement('div');
+                    div.className = isFinalNote ? 'final-note' : 'log-entry';
+                    div.id = id;
+                    div.dataset.index = index;
+
+                    if (isFinalNote) {
+                        div.innerHTML = body.replace(/\n/g, '<br>');
+                    } else {
+                        div.innerHTML = `
+                            <span class="log-header">← ${header} →</span>
+                            <p class="log-body">${body}</p>
+                        `;
+                    }
+
+                    container.appendChild(div);
+                    slides.push(div);
+                    slideMap[id] = index;
+                });
+
+                // Initialize view
+                checkHash();
+
+            } catch (error) {
+                console.error('Error loading logs:', error);
+                container.innerHTML = `<p style="color: #CA2328;">Failed to load prologue logs.</p>`;
+            }
+        }
+
+        function updateView() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentIndex].classList.add('active');
+
+            const totalLogs = slides.length - 1;
+            if (currentIndex < totalLogs) {
+                counter.textContent = `Log ${currentIndex + 1} of ${totalLogs}`;
+            } else {
+                counter.textContent = `Final Note`;
+            }
+
+            prevBtn.disabled = false;
+            nextBtn.disabled = false;
+        }
+
+        function updateURLHash(index) {
+            const id = slides[index].id;
+            if (id) {
+                history.replaceState(null, '', '#' + id);
+            }
+        }
+
+        function goToSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            
+            currentIndex = index;
+            updateView();
+            updateURLHash(index);
+        }
+
+        function checkHash() {
+            const hash = window.location.hash.substring(1);
+            if (hash && slideMap[hash] !== undefined) {
+                currentIndex = slideMap[hash];
+            } else {
+                currentIndex = 0;
+            }
+            updateView();
+        }
+
+        prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+        nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+        window.addEventListener('hashchange', checkHash);
+
+        // Load the data
+        loadLogs();
+    </script>
+</body>
+</html>
