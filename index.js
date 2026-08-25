@@ -114,8 +114,8 @@ function viewAllChapters() {
 
 // --- FANART LOGIC ---
 const fanartList = [
-    { file: "image1.png", artist: "@..." },
-    { file: "image2.png", artist: "@..." },
+    { file: "image1.png", artist: "@mecauseafter" },
+    { file: "image2.png", artist: "@mecauseafter" },
     { file: "image3.png", artist: "@..." }
 ];
 
