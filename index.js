@@ -60,31 +60,12 @@ function loadNextBatch() {
     }
 }
 
-loadMoreBtn.addEventListener('click', loadNextBatch);
-
-setupLatestChapterBtn();
-loadChapters();
-
-function highlight(id) {
-    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-}
-
-function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active');
-}
-
-// --- NEW: VIEW ALL CHAPTERS FUNCTION ---
 function viewAllChapters() {
-    // 1. Hide the Load More button immediately
     loadMoreBtn.style.display = 'none';
-
-    // 2. Calculate how many chapters are left to load
+    
     const remainingCount = allChaptersData.length - currentDisplayCount;
 
     if (remainingCount > 0) {
-        // 3. Load all remaining chapters at once
         const nextBatch = allChaptersData.slice(currentDisplayCount, currentDisplayCount + remainingCount);
 
         nextBatch.forEach((chapter, index) => {
@@ -104,15 +85,28 @@ function viewAllChapters() {
             container.appendChild(row);
         });
 
-        // Update the count so it knows we're done
         currentDisplayCount += remainingCount;
     }
 
-    // 4. Smooth scroll to the top of the chapter list
     container.scrollIntoView({ behavior: 'smooth' });
 }
 
-// --- FANART LOGIC ---
+loadMoreBtn.addEventListener('click', loadNextBatch);
+
+setupLatestChapterBtn();
+loadChapters();
+
+function highlight(id) {
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+}
+
+// --- FANART LOGIC (RELIABLE FADE + FIXED SIZE) ---
 const fanartList = [
     { file: "image1.png", artist: "@mecauseafter" },
     { file: "image2.png", artist: "@mecauseafter" },
@@ -133,28 +127,36 @@ function initFanart() {
         return;
     }
 
-    fanartList.forEach((art, index) => {
-        const img = document.createElement('img');
-        img.src = `fanart/${art.file}`;
-        img.alt = `Fanart by ${art.artist}`;
-        if (index === 0) img.classList.add('active');
-        container.appendChild(img);
-    });
+    // Create a single <img> tag and keep it always visible
+    const img = document.createElement('img');
+    img.src = `fanart/${fanartList[0].file}`;
+    img.alt = `Fanart by ${fanartList[0].artist}`;
+    img.style.display = 'block';
+    img.style.opacity = '1'; // Always visible
+    container.appendChild(img);
 
     credit.textContent = `Art by: ${fanartList[0].artist}`;
     startRotation();
 }
 
 function showArt(index) {
-    const images = document.querySelectorAll('.fanart-image-container img');
+    const container = document.getElementById('fanartContainer');
     const credit = document.getElementById('fanartCredit');
+    const img = container.querySelector('img');
+    
+    if (!img) return;
 
-    images.forEach(img => img.classList.remove('active'));
-
-    if (images[index]) {
-        images[index].classList.add('active');
+    // 1. Fade out the current image
+    img.style.opacity = '0';
+    
+    // 2. Wait 300ms (matches CSS transition), swap the source, fade back in
+    setTimeout(() => {
+        img.src = `fanart/${fanartList[index].file}`;
+        img.alt = `Fanart by ${fanartList[index].artist}`;
+        img.style.opacity = '1'; // Fade back in
+        
         credit.textContent = `Art by: ${fanartList[index].artist}`;
-    }
+    }, 300);
 }
 
 function nextArt() {

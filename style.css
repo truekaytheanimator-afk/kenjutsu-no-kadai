@@ -77,7 +77,8 @@ body {
 }
 
 .btn-signup:hover {
-    background-color: #a01b1f;
+    background-color: aliceblue;
+    color: black;
 }
 
 .hamburger {
@@ -213,12 +214,14 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .btn-view:hover {
-    border-color: aliceblue;
+    background-color: #CA2328;
+    color: aliceblue;
+    cursor: pointer;
 }
 
 .arccard {
@@ -354,19 +357,12 @@ body {
 }
 
 .fanart-image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    border-radius: 6px;
-}
-
-.fanart-image-container img.active {
+    object-fit: contain;
     opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 6px;
 }
 
 .fanart-credit {
@@ -385,11 +381,12 @@ body {
     cursor: pointer;
     font-family: "Lato", sans-serif;
     font-weight: 700;
-    transition: background-color 0.3s;
+    transition: background-color 0.4s;
 }
 
 .btn-fanart-refresh:hover {
-    background-color: #a01b1f;
+    background-color: aliceblue;
+    color: black;
 }
 
 #latest, #fanart, #home {
@@ -443,5 +440,8 @@ body {
     .chapter-btn {
         width: 100%;
         text-align: center;
+    }
+    .fanart-image-container {
+        max-width: 100%;
     }
 }
