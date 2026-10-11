@@ -106,7 +106,6 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 
-// --- FANART LOGIC (RELIABLE FADE + FIXED SIZE) ---
 const fanartList = [
     { file: "image1.png", artist: "@mecauseafter" },
     { file: "image2.png", artist: "@mecauseafter" },
@@ -127,12 +126,11 @@ function initFanart() {
         return;
     }
 
-    // Create a single <img> tag and keep it always visible
     const img = document.createElement('img');
     img.src = `fanart/${fanartList[0].file}`;
     img.alt = `Fanart by ${fanartList[0].artist}`;
     img.style.display = 'block';
-    img.style.opacity = '1'; // Always visible
+    img.style.opacity = '1'; 
     container.appendChild(img);
 
     credit.textContent = `Art by: ${fanartList[0].artist}`;
@@ -146,10 +144,8 @@ function showArt(index) {
     
     if (!img) return;
 
-    // 1. Fade out the current image
     img.style.opacity = '0';
     
-    // 2. Wait 300ms (matches CSS transition), swap the source, fade back in
     setTimeout(() => {
         img.src = `fanart/${fanartList[index].file}`;
         img.alt = `Fanart by ${fanartList[index].artist}`;
