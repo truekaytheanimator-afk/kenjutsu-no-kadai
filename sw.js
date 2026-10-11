@@ -1,4 +1,4 @@
-const CACHE_NAME = 'knk-v5';
+const CACHE_NAME = 'knk-v6';
 const ASSETS = [
   '/',
   '/index.html',
