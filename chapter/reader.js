@@ -24,7 +24,7 @@ async function loadChapter() {
 
         const chapter = chapterData[targetIndex];
 
-        // --- SETUP SHARE BUTTONS ---
+        // share buttons
         const currentUrl = window.location.href.split('#')[0] + '#' + chapterNum;
         const shareText = `Check out ${chapter.title} on Kenjutsu No Kadai!`;
 
@@ -59,7 +59,6 @@ async function loadChapter() {
                 alert('Could not copy link automatically. Please copy the URL from your browser.');
             });
         };
-        // ------------------------------------
 
         document.getElementById('breadcrumbs').innerHTML = `
             Home <span>&gt;</span> Chapters <span>&gt;</span> ${chapter.arc_name} <span>&gt;</span> ${chapter.title}
@@ -280,3 +279,8 @@ async function loadChapter() {
 
 window.addEventListener('hashchange', loadChapter);
 loadChapter();
+
+// register sw.js
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}

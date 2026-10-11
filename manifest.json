@@ -1,0 +1,16 @@
+{
+  "name": "Kenjutsu No Kadai",
+  "short_name": "KNK",
+  "description": "The official website for Kenjutsu No Kadai.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070709",
+  "theme_color": "#CA2328",
+  "icons": [
+    {
+      "src": "/src/favicon.ico",
+      "sizes": "48x48 64x64 128x128 256x256",
+      "type": "image/png"
+    }
+  ]
+}
