@@ -170,7 +170,7 @@
         <div class="sub-header">Classified Personal Logs — Recovered by Fumi Akane (2009)</div>
 
         <div id="log-container">
-            <!-- Logs will be loaded here by JavaScript -->
+            <!-- js hook thingy -->
         </div>
 
         <div class="nav-controls">
@@ -203,13 +203,13 @@
                 const response = await fetch('logs.txt');
                 const text = await response.text();
 
-                // Split the text by === to get individual logs
+                // indivual delimiter '===' to seperate logs
                 const rawLogs = text.split('===').map(entry => entry.trim()).filter(entry => entry.length > 0);
 
                 container.innerHTML = '';
                 slides = [];
                 
-                // Clear the map and rebuild it
+                // clear map and rebuild it
                 for (const key in slideMap) delete slideMap[key];
 
                 rawLogs.forEach((raw, index) => {
@@ -239,7 +239,7 @@
                     slideMap[id] = index;
                 });
 
-                // Initialize view
+                // initialize view
                 checkHash();
 
             } catch (error) {
@@ -293,7 +293,6 @@
         nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
         window.addEventListener('hashchange', checkHash);
 
-        // Load the data
         loadLogs();
     </script>
 </body>
