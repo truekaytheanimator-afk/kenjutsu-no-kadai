@@ -1,0 +1,24 @@
+{
+  "name": "knkwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truekaytheanimator-afk/knk-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/truekaytheanimator-afk/knk-website/issues"
+  },
+  "homepage": "https://github.com/truekaytheanimator-afk/knk-website#readme",
+  "dependencies": {
+    "firebase-admin": "^14.5.0"
+  }
+}
