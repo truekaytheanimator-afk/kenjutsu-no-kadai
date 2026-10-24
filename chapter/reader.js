@@ -79,7 +79,7 @@ async function loadChapter() {
             </div>
         `;
 
-        document.title = `${chapter.title} - Kenjutsu No Kadai`;
+        document.title = `Kenjutsu No Kadai - ${chapter.title}`;
 
         document.getElementById('info-grid').innerHTML = `
             <div class="row"><span>Arc:</span> <span>${chapter.arc_name}</span></div>
