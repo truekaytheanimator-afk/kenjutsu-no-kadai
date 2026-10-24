@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniques - Kenjutsu No Kadai</title>
+    <link rel="icon" type="image/x-icon" href="../src/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dela+Gothic+One&family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-color: #070709;
+            color: aliceblue;
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+        }
+
+        .techniques-page {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .techniques-page h1 {
+            font-family: 'Archivo Black', sans-serif;
+            color: #CA2328;
+            font-size: 38px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .sub-header {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #1E1A1D;
+            padding-bottom: 15px;
+        }
+
+        .technique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .technique-card {
+            background-color: #121012;
+            border: 1px solid #1E1A1D;
+            border-left: 4px solid #4A02AE; 
+            border-radius: 4px;
+            padding: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .technique-card:hover {
+            border-color: #CA2328; 
+        }
+
+        .tech-name {
+            font-family: 'Archivo Black', sans-serif;
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .tech-type {
+            color: #CA2328;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .tech-desc {
+            color: #aaa;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 850px) {
+            .techniques-page h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <img class="nav-logo" src="../src/knklogodark0001.png" alt="Logo">
+        <div class="nav-links" id="navLinks">
+            <a id="nav-home" class="nav-item" href="../index.html">HOME</a>
+            <a id="nav-chapters" class="nav-item" href="../index.html#latest">CHAPTERS</a>
+            <a id="nav-prologue" class="nav-item" href="/prologue/">PROLOGUE</a>
+            <a id="nav-fanart" class="nav-item" href="../index.html#fanart">FANART</a>
+            <a id="nav-techniques" class="nav-item active" href="/techniques/">TECHNIQUES</a>
+            <div class="auth-buttons">
+                <a href="mailto:kay.the.animation.maker@gmail.com?subject=KNK%20Fan%20Mail" class="btn-login">FANMAIL</a>
+                <a href="https://discord.gg/zzujgs2D82" class="btn-signup">DISCORD</a>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div class="techniques-page">
+        <h1>SWORD TECHNIQUES</h1>
+        <div class="sub-header">A glossary of sword/dissonant spirit techniques.</div>
+
+        <div id="technique-container" class="technique-grid">
+            <!-- js hook v2349 -->
+            <p style="color: #888;">Loading techniques...</p>
+        </div>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        async function loadTechniques() {
+            const container = document.getElementById('technique-container');
+            
+            try {
+                const response = await fetch('techniques.txt');
+                const text = await response.text();
+
+                // split by "---"
+                const rawEntries = text.split('---').map(entry => entry.trim()).filter(entry => entry.length > 0);
+
+                container.innerHTML = '';
+
+                rawEntries.forEach(entry => {
+                    const lines = entry.split('\n');
+                    const name = lines[0].trim();
+                    const cardColor = lines[1].trim();
+                    const type = lines[2].trim();
+                    const desc = lines.slice(3).join('\n').trim();
+
+                    const card = document.createElement('div');
+                    card.className = 'technique-card';
+
+                    card.style.borderLeft = `4px solid ${cardColor}`;
+                    card.addEventListener('mouseenter', () => {
+                        card.style.borderColor = cardColor;
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.borderColor = `#1E1A1D`;
+                        card.style.borderLeft = `4px solid ${cardColor}`;
+                    });
+
+                    card.innerHTML = `
+                        <div class="tech-name">${name}</div>
+                        <span class="tech-type">Seen as: ${type}</span>
+                        <p class="tech-desc">${desc}</p>
+                    `;
+
+                    container.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('Error loading techniques:', error);
+                container.innerHTML = `<p style="color: #CA2328;">Failed to load techniques.</p>`;
+            }
+        }
+
+        loadTechniques();
+    </script>
+</body>
+</html>

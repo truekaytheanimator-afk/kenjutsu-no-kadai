@@ -1,4 +1,4 @@
-const CACHE_NAME = 'knk-v9';
+const CACHE_NAME = 'knk-v18';
 const ASSETS = [
   '/',
   '/index.html',
@@ -8,7 +8,13 @@ const ASSETS = [
   '/chapter/',
   '/chapter/index.html',
   '/chapter/reader.css',
-  '/chapter/reader.js'
+  '/chapter/reader.js',
+  '/prologue/',
+  '/prologue/index.html',
+  '/prologue/logs.txt',
+  '/techniques/',
+  '/techniques/index.html',
+  '/techniques/techniques.txt'
 ];
 
 // install cache thing

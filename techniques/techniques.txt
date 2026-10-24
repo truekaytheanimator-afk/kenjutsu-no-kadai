@@ -1,0 +1,139 @@
+Jouka
+#4a0000
+Neither
+This is not a traditional technique, nor does it require cognition. This technique is purely meant to take away dissonance and absorb it. Translation of Jouka: Purification.
+---
+[HIDDEN]
+#ffdede
+Neither
+This is not a traditional technique. No current explanation due to spoilers.
+---
+Blood Blossom
+#F078C0
+Harmonious & Dissonant
+This technique causes blood cells around the wound inflicted by the blade to slowly swell and eventually explode. The cognition amount determines how many blood cells are affected.
+---
+Double Impact
+#84FFA8
+Harmonious
+When this technique is active, it creates a second, more powerful impact in the exact same area where the first impact collided with the target. The cognition amount determines how powerful the second strike is, but the delay between strikes is freely changeable rather than also charging cognition.
+---
+Shocking Execution
+#FFE878
+Harmonious
+This technique allows electricity to flow directly from the sword to multiple targets. It must be channeled through a target to be directed toward more targets, though. The cognition amount determines how powerful the electricity is.
+---
+Pacifying Rivers
+#79B3FF
+Harmonious
+This technique can generate water with special properties; the output of this technique is determined not only by cognition, controlling the amount of water released, but also determined on what context it is being used in. The user directly decides whether the water created from the technique soothes wounds and injuries (stopping pain and bleeding), or if it only generates regular water. Cognition specifically determines how much water is generated from the sword.
+---
+Violent Flurry
+#A34DED
+Harmonious & Dissonant
+This technique allows the user to witness every unavoidable opening to strike, and it increases their speed to strike. Cognition determines how many openings the user can strike.
+---
+Shielding Strikes
+#88ffcd
+Dissonant
+This technique creates see-through shields (that shatter from impact or fade after the technique is deactivated) from striking motions. Cognition determines how long it can be used.
+---
+Channeling Restoration
+#ff0000
+Dissonant
+This technique does not require a specific cognition amount, it determines how much cognition needed for the selected target. The technique effectively reverses damage done to a selected object.
+---
+Visualized Senses
+#00769a
+Dissonant
+Technically a partial misnomer, sight is a sense already visualized. This technique allows you to visualize every single sense, allowing things like sound to be seen in audio waves. The cognition amount determines how long the technique is active.
+---
+Fractal Spear
+#896000
+Dissonant
+This technique creates a 3D representation of logarithmic spiral, which recursively expands itself forward or backward on its Z axis. This spiral will not stop or go away due to cognitive-based limits until it reaches its target. Not only that, but it will also increase in size if it reaches a size where it would no longer even be effective enough to impale the target. It can change directions at any given time, if the user wills it. The cognition determines the speed and size.
+---
+Instant Combustion
+#f98663
+Dissonant
+This technique can explode its target instantly. The cognition amount determines the explosion's size.
+---
+Fiery Confinement
+#E24105
+Dissonant
+This technique creates a cage of fire around a target, or inside a target. This cage will infinitely expand if the technique is not explicitly deactivated. The cognition amount determines how big it originally starts. This technique can also be used to just generate fire rather than a cage of it.
+---
+Lava Tides
+#FFAD78
+Harmonious & Dissonant
+This technique creates lava inside a target, and can control which direction the lava is created in stemming from the target. The amount of cognition determines the amount of lava.
+---
+Emerald's Harness
+#005603
+Harmonious
+This technique creates a symbol on the user's forehead, and cognition controls the energy that flows into the technique from that symbol. This special energy allows the user to bind a target (has to be physically touching the sword) to another target (does not have to be physically touching the sword) or do the opposite between the two targets: repel. Both the speed and trajectory of the initial target is changeable without cognition.
+---
+Technique Deactivation
+#555
+Harmonious
+Temporarily nullifies all information shared within the bond between a different technique user and their sword. The cognition amount determines how long it lasts.
+---
+Supersonic Strikes
+#7b00ff
+Harmonious
+Once activated, the force of each strike will increase if it continuously hits the target. If one strike misses, the technique deactivates. The cognition amount determines how many strikes are intended to increase in force.
+---
+Void
+#1d0024
+Harmonious
+This technique will slow down everything up until it gets rid of a target or removes some property of the target. The amount of cognition determines how long the technique lasts.
+---
+Galaxial Force
+#594180
+Harmonious
+This technique allows you to draw force from every single thing in the galaxy and use it. The technique prevents everything from colliding into you (gravitational force), so in subsitution, everything around the user begins to shake violently dependant upon the amount taken from the galaxy.
+---
+Sensory Awakening
+#331698
+Harmonious
+Activates a user's sixth sense to track down their sword. Cognition is not needed, and mastery/full enhancement of the technique is automatically granted to the user.
+---
+Sunlight Beam
+#f5ea4c
+Harmonious
+Causes multiple rays of sunlight to collide into one and fire directly onto a target. The cognition amount determines how many rays collide into a beam.
+---
+[HIDDEN]
+#70d9ff
+Harmonious
+No description due to spoilers.
+---
+Swift Travel
+#6f0240
+Harmonious
+Amplifies the speed of a target. The cognition amount determines how fast the target can go.
+---
+Technique Absorption
+#fff
+Harmonious ➤ Dissonant
+This technique takes a target's bond between them and their sword, and then adds it to a seperate sub-bond between the user and the sword, effectively stealing the technique. Cognition is locked to 100% for full technique transfer.
+---
+Technique Restoration
+#fff
+Harmonious
+This technique can restore a technique stolen from Technique Absorption, but the Technique Absorption user would still be able to use the sub-technique. Also locked to 100% Cognition to fully restore a technique.
+---
+Limitless Transparency
+#B33802
+Dissonant
+This technique can make a target invisible with the only limit being cognition, controlling the amount of time the invisibility lasts.
+---
+Soul Collector
+#01C7B4
+Dissonant
+This technique absorbs souls, and reduces the amount of cognition the user needs to spend to take souls. Souls that the user has already absorbed can neutralize a technique. The cognition amount determines how powerful the technique is compared to the target's soul.
+---
+Overwhelming Echoes
+#041FED
+Dissonant
+With this technique, the user can screech so unpleasantly loud that it disrupts other techniques and deactivates them. The amount of cognition determines the loudness of the screech.
