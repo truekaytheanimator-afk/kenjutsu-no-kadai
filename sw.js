@@ -1,51 +1,86 @@
-const CACHE_NAME = 'knk-v23';
+const CACHE_NAME = 'knk-v25';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/index.js',
-  '/data.json',
-  '/chapter/',
-  '/chapter/index.html',
-  '/chapter/reader.css',
-  '/chapter/reader.js',
-  '/prologue/',
-  '/prologue/index.html',
-  '/prologue/logs.txt',
-  '/techniques/',
-  '/techniques/index.html',
-  '/techniques/techniques.txt'
+    '/',
+    '/index.html',
+    '/style.css',
+    '/index.js',
+    '/data.json',
+    '/chapter/',
+    '/chapter/index.html',
+    '/chapter/reader.css',
+    '/chapter/reader.js',
+    '/prologue/',
+    '/prologue/index.html',
+    '/prologue/logs.txt',
+    '/techniques/',
+    '/techniques/index.html',
+    '/techniques/techniques.txt',
+    '/src/knkbanner.png',
+    '/src/knklogodark0001.png',
+    '/src/knklogodark0002.png',
+    '/src/favicon.ico',
+    '/src/arc1cover.png'
 ];
 
-// install cache thing
+// 1. FORCE UPDATE: Skip the waiting phase
 self.addEventListener('install', (e) => {
-  e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS);
-    })
-  );
-});
-
-// handle old caches
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
+    self.skipWaiting();
+    e.waitUntil(
+        caches.open(CACHE_NAME).then((cache) => {
+            return cache.addAll(ASSETS);
         })
-      );
-    })
-  );
+    );
 });
 
-// offline support
+self.addEventListener('activate', (e) => {
+    e.waitUntil(
+        caches.keys().then((keys) => {
+            return Promise.all(
+                keys.map((key) => {
+                    if (key !== CACHE_NAME) {
+                        return caches.delete(key);
+                    }
+                })
+            );
+        }).then(() => {
+            return self.clients.claim();
+        })
+    );
+});
+
 self.addEventListener('fetch', (e) => {
-  e.respondWith(
-    caches.match(e.request).then((response) => {
-      return response || fetch(e.request);
-    })
-  );
+    if (e.request.method !== 'GET') return;
+
+    if (e.request.headers.get('accept').includes('text/html')) {
+        e.respondWith(
+            fetch(e.request)
+                .then((networkResponse) => {
+                    // Save the fresh HTML to the cache
+                    return caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(e.request, networkResponse.clone());
+                        return networkResponse;
+                    });
+                })
+                .catch(() => {
+                    return caches.match(e.request);
+                })
+        );
+        return;
+    }
+
+    e.respondWith(
+        caches.match(e.request).then((response) => {
+            if (response) return response;
+
+            return fetch(e.request).then((networkResponse) => {
+                if (e.request.destination === 'image') {
+                    return caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(e.request, networkResponse.clone());
+                        return networkResponse;
+                    });
+                }
+                return networkResponse;
+            });
+        })
+    );
 });
