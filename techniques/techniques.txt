@@ -137,3 +137,49 @@ Overwhelming Echoes
 #041FED
 Dissonant
 With this technique, the user can screech so unpleasantly loud that it disrupts other techniques and deactivates them. The amount of cognition determines the loudness of the screech.
+---
+Bone Blast
+#C4DDA1
+Dissonant
+On impact, this sword creates enough force to effectively break a bone. The cognition amount determines how extensive the damage to the bone is.
+---
+Health Enhancement
+#af2222
+Dissonant
+This technique can heal the target instantly. The cognition amount determines the amount of harm it can heal.
+...
+Gravitational Module
+#5900a2
+Dissonant
+This technique can change which direction gravity pulls within a selected space. The cognition amount determines how wide of an area the technique affects.
+---
+Atom Manipulation
+#097241
+Dissonant
+This technique can freely manipulate atoms and forcefully change their properties. The cognition amount determines how much control the user has over their selected range of atoms.
+---
+Decaying Center
+#223
+Dissonant
+Stemming from the center of a selected area, the life around it will slowly decay and wilt. The cognition amount determines how big the area is.
+---
+Ice Manipulation
+#b5dcff
+Dissonant
+This technique can freely manipulate ice. The cognition amount determines how much ice can be freely used against a target.
+---
+Energy-charged Railgun Blade
+#00c500
+Dissonant
+This technique charges up energy at the tip of the blade, and then fires it as a beam toward a target. The cognition amount determines the amount of energy that can be charged up.
+---
+Blood Manipulation
+#500
+Dissonant
+This technique can use any blood that is drawn by the user, or any blood that touches the user. If the blood is consumed, the user can transform into a copy of the blood's owner. The cognition amount determines how powerful the manipulation is. Transforming requires no cognition.
+---
+Emotional Incarnate
+#000
+Dissonant
+This technique allows the user to be strengthed by negative emotions and uncertanity, and the user can be weakened once positive and certain emotions are sensed. Through these emotions, if the user comes into contact with the target, the user can freely take that emotion and convert it into an attack with a hefty amount of mass. The cognition amount determines the strength of the technique, however, emotions control how much cognition can be used.
+---
