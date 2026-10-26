@@ -55,7 +55,6 @@ self.addEventListener('fetch', (e) => {
         e.respondWith(
             fetch(e.request)
                 .then((networkResponse) => {
-                    // Save the fresh HTML to the cache
                     return caches.open(CACHE_NAME).then((cache) => {
                         cache.put(e.request, networkResponse.clone());
                         return networkResponse;
